@@ -9,7 +9,29 @@
     <div id="offline-page">
         <h1>Vous êtes hors ligne gros nul !</h1>
         <p>Désolé, la connexion Internet semble être hors ligne. Vérifiez votre connexion et réessayez.</p>
+        <div id="scores-container">
+            <p>Derniers scores connus :</p>
+            <p>Team A: <span id="teamA-score">Chargement...</span></p>
+            <p>Team B: <span id="teamB-score">Chargement...</span></p>
+        </div>
         <button onclick="location.reload();">Réessayer</button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupération des scores depuis localStorage
+            const savedScores = localStorage.getItem('scores');
+            if (savedScores) {
+                const scores = JSON.parse(savedScores);
+                // Mise à jour du contenu HTML avec les scores récupérés
+                document.getElementById('teamA-score').textContent = scores.teamA;
+                document.getElementById('teamB-score').textContent = scores.teamB;
+            } else {
+                // Gestion du cas où aucun score n'est enregistré en localStorage
+                document.getElementById('teamA-score').textContent = 'Non disponible';
+                document.getElementById('teamB-score').textContent = 'Non disponible';
+            }
+        });
+    </script>
 </body>
 </html>
