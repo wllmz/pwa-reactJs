@@ -23,12 +23,14 @@ Une page statique offline.html a été préparée pour s'afficher lorsque l'appl
 
 ### Démarrage du Projet
 
-API Back-end :
+#### API Back-end :
+
 Installer les dépendances : npm install.
 
 Démarrer l'API : npm start.
 
-Application React (PWA) :
+#### Application React (PWA) :
+
 Installer les dépendances : npm install.
 
 Démarrer l'application : npm start.
